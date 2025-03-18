@@ -1,0 +1,23 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.float-r{
+    position: absolute;
+    right: 5%;
+}
+.tr-item:hover{
+    cursor: pointer;
+    background-color: #ccc;
+}
+.plth-100{
+    padding-left: 40rem;
+}
+.winput{
+    width: 45px;
+}
