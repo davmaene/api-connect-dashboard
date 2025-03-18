@@ -1,4 +1,4 @@
-const primaryColor = "#093601";
+const primaryColor = "#ff7b00";
 const secondaryColor = "#fafafa";
 const pillColor = "#EEEEEE";
 const successColor = "#73C912";
