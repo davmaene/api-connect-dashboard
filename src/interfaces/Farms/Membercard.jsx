@@ -18,7 +18,7 @@ export const BusinessCard = ({ current }) => {
         <div className="container">
             {f && (
                 <div className="business-card front">
-                    <div className="logo">COMPANY</div>
+                    <div className="logo">{""}</div>
                     <div className="design-overlay"></div>
                     <div className="card-content">
                         <h1>{info.name}</h1>
@@ -32,15 +32,15 @@ export const BusinessCard = ({ current }) => {
                     </div>
                 </div>
             )}
-            {!f && (
+            {/* {!f && (
                 <div className="business-card back">
-                    {/* <div className="logo">Mukulima Track</div>
-                            <p className="slogan">Your Slogan Here</p>
-                            <div className="design-overlay">
-                                <img src={logo} alt="" srcset="" style={{ alignSelf: "center", objectFit: "contain" }} />
-                            </div> */}
+                    <div className="logo">Mukulima Track</div>
+                    <p className="slogan">Your Slogan Here</p>
+                    <div className="design-overlay">
+                        <img src={logo} alt="" srcset="" style={{ alignSelf: "center", objectFit: "contain" }} />
+                    </div>
                 </div>
-            )}
+            )} */}
             <Button
                 type='primary'
                 style={{

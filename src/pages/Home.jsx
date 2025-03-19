@@ -81,7 +81,7 @@ export const HomeScreen = () => {
     },
     {
       today: "Dipositifs installés",
-      title: (users.length * 0.75).toFixed(0),
+      title: (users.length * 0.18).toFixed(0),
       // persent: "10%",
       icon: <MdHealthAndSafety />,
       bnb: "bnb2",
