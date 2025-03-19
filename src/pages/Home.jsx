@@ -13,19 +13,11 @@ import {
   Timeline,
   Radio,
 } from "antd";
-import {
-  ToTopOutlined,
-  MenuUnfoldOutlined,
-  RightOutlined,
-} from "@ant-design/icons";
 import Paragraph from "antd/lib/typography/Paragraph";
 
-import Echart from "../components/chart/EChart";
-import LineChart from "../components/chart/LineChart";
 import { GoProjectTemplate } from "react-icons/go";
 import { FaUsers } from "react-icons/fa";
 
-import card from "../assets/images/info-card-1.jpg";
 import { cart, profile } from "../components/subcomponents/subcomponents";
 import { Colors } from "../assets/colors/colors";
 import { onLoadAllCooperatives, onLoadAllLabos, onLoadAllMarkets, onLoadAllPharmacies, onLoadAllProject, onLoadAllUsers, onLoadAllUsersAlerts, onLoadAllUsersPerCategory, onLoadAllUsersVsisits } from "../helpers/helper.call";
@@ -39,8 +31,6 @@ import { CiBank } from "react-icons/ci";
 
 export const HomeScreen = () => {
   const { Title, Text } = Typography;
-
-  const onChange = (e) => console.log(`radio checked:${e.target.value}`);
 
   const [isloading, setisloading] = React.useState(false);
   const [users, setusers] = React.useState([])
