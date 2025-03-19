@@ -74,7 +74,7 @@ function Sidenav({ color }) {
       <div className="brand">
         <strong style={{ fontSize: Dims.titleFontSize, color: Colors.primaryColor }}>
           {appname} |
-          {/* Dashboard */}
+          App
         </strong>
       </div>
       <Divider />

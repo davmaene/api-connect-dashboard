@@ -119,7 +119,7 @@ export const DashboardMenus = ({ user, appkey }) => {
                         </NavLink>
                     </Menu.Item>
                     {/* ========================================= */}
-                    <Menu.Item key={randomLongNumber({ length: 6 })}>
+                    {/* <Menu.Item key={randomLongNumber({ length: 6 })}>
                         <NavLink to={routes['labos']}>
                             <span
                                 className="icon"
@@ -131,7 +131,7 @@ export const DashboardMenus = ({ user, appkey }) => {
                             </span>
                             <span className="label">Laboratoires</span>
                         </NavLink>
-                    </Menu.Item>
+                    </Menu.Item> */}
                     {/* ========================================= */}
                     <Menu.Item key={randomLongNumber({ length: 6 })}>
                         <NavLink to={routes['products']}>
@@ -147,7 +147,7 @@ export const DashboardMenus = ({ user, appkey }) => {
                         </NavLink>
                     </Menu.Item>
                     {/* ========================================= */}
-                    <Menu.Item key={randomLongNumber({ length: 6 })}>
+                    {/* <Menu.Item key={randomLongNumber({ length: 6 })}>
                         <NavLink to={routes['projects']}>
                             <span
                                 className="icon"
@@ -159,7 +159,7 @@ export const DashboardMenus = ({ user, appkey }) => {
                             </span>
                             <span className="label">Projets </span>
                         </NavLink>
-                    </Menu.Item>
+                    </Menu.Item> */}
                     {/* ========================================= */}
                     <Menu.Item key={randomLongNumber({ length: 6 })}>
                         <NavLink to={routes['marches']}>
@@ -189,7 +189,7 @@ export const DashboardMenus = ({ user, appkey }) => {
                         </NavLink>
                     </Menu.Item>
                     {/* ========================================= */}
-                    <Menu.Item key={randomLongNumber({ length: 6 })}>
+                    {/* <Menu.Item key={randomLongNumber({ length: 6 })}>
                         <NavLink to={routes['pharmacies']}>
                             <span
                                 className="icon"
@@ -201,9 +201,9 @@ export const DashboardMenus = ({ user, appkey }) => {
                             </span>
                             <span className="label">Pharmacies </span>
                         </NavLink>
-                    </Menu.Item>
+                    </Menu.Item> */}
                     {/* ========================================= */}
-                    <Menu.Item key={randomLongNumber({ length: 6 })}>
+                    {/* <Menu.Item key={randomLongNumber({ length: 6 })}>
                         <NavLink to={routes['champs']}>
                             <span
                                 className="icon"
@@ -215,7 +215,7 @@ export const DashboardMenus = ({ user, appkey }) => {
                             </span>
                             <span className="label">Champs </span>
                         </NavLink>
-                    </Menu.Item>
+                    </Menu.Item> */}
                     {/* ========================================= */}
                     <Menu.Item key={randomLongNumber({ length: 6 })}>
                         <NavLink to={routes['villages']}>
