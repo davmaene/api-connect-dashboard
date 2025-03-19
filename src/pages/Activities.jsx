@@ -7,6 +7,7 @@ import { LuRefreshCw } from 'react-icons/lu';
 import { now, onFinishFailed } from '../helpers/helper.all';
 import { onLoadAllProvinces, onLoadAllTerritoriesByProvinces, onLoadAllVillages } from '../helpers/helper.call';
 import { handleSearch } from 'dm-handlesearch';
+import LineChart from '../components/chart/LineChart';
 
 const { Title, Text } = Typography;
 const { Column, ColumnGroup } = Table;
@@ -22,6 +23,19 @@ export const ActivitiesScreen = () => {
     const [jobs, setjobs] = React.useState([]);
     const [keyword, setkeyword] = React.useState("");
     const [temps, settemps] = React.useState([]);
+
+    const dataNordKivu = [
+        { date: "2024-02-15", tempMin: 18, tempMax: 25, village: "Kibirizi", humidite: 75 },
+        { date: "2024-05-20", tempMin: 16, tempMax: 23, village: "Nyanzale", humidite: 80 },
+        { date: "2024-08-10", tempMin: 19, tempMax: 26, village: "Rutshuru", humidite: 78 },
+        { date: "2024-11-05", tempMin: 15, tempMax: 22, village: "Kanyabayonga", humidite: 72 },
+        { date: "2025-01-12", tempMin: 20, tempMax: 28, village: "Masisi", humidite: 85 },
+        { date: "2024-04-18", tempMin: 17, tempMax: 24, village: "Kiwanja", humidite: 79 },
+        { date: "2024-09-30", tempMin: 21, tempMax: 29, village: "Oicha", humidite: 82 },
+        { date: "2025-03-05", tempMin: 18, tempMax: 25, village: "Beni", humidite: 77 },
+        { date: "2024-12-22", tempMin: 16, tempMax: 23, village: "Lubero", humidite: 74 },
+        { date: "2025-02-28", tempMin: 19, tempMax: 27, village: "Kamango", humidite: 81 }
+    ];
 
     const onChange = async () => {
 
@@ -113,7 +127,7 @@ export const ActivitiesScreen = () => {
         })
     };
 
-    React.useEffect(() => { 
+    React.useEffect(() => {
         _____onLoadInfos()
     }, []);
 
@@ -217,6 +231,20 @@ export const ActivitiesScreen = () => {
                                         </Col>
                                     </Row>
                                 </Form>
+                            </div>
+                            <div className="w-100 px-3">
+                                <Row gutter={[24, 0]}>
+                                    {/* <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
+                                        <Card bordered={false} className="criclebox h-full">
+                                            <EChart data={{ users, stores, projects, labos, visites: visits }} />
+                                        </Card>
+                                    </Col> */}
+                                    <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
+                                        <Card bordered={false} className="criclebox h-full">
+                                            <LineChart data={{ visits: dataNordKivu, users: [] }} />
+                                        </Card>
+                                    </Col>
+                                </Row>
                             </div>
                         </div>
                     </Card>
