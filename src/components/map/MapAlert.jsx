@@ -36,7 +36,7 @@ export const AreaMapAlert = () => {
         autoFit: true,
         color: {
             field: 'POPULATION',
-            value: ['rgb(255,255,241)', 'rgb(239,243,255)', 'rgb(85,115,85)', 'rgb(22,110,6)', 'rgb(9,54,1)'],
+            value: ['rgb(255,255,241)', 'rgb(239,243,255)', 'rgb(255, 200, 30)', 'rgb(22,110,6)', 'rgb(255,123,0)'],
             scale: {
                 type: 'quantile',//173,188,170
             },

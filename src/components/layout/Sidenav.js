@@ -74,11 +74,11 @@ function Sidenav({ color }) {
       <div className="brand">
         <strong style={{ fontSize: Dims.titleFontSize, color: Colors.primaryColor }}>
           {appname} |
-          Dashboard
+          {/* Dashboard */}
         </strong>
       </div>
       <Divider />
-      <BuildMenusApp appkey={___APPID} user={user} />
+      <BuildMenusApp appkey={8498} user={user} />
       <Menu>
         <Menu.Item
           key="1"
