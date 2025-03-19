@@ -46,8 +46,6 @@ export const VillagesPage = () => {
     const [jobs, setjobs] = React.useState([]);
     const [temps, settemps] = React.useState([]);
     const [isloading, setisloading] = React.useState(false);
-    const [current, setcurrent] = React.useState({});
-    const [visibledisplay, setvisibledisplay] = React.useState(false)
     const [keyword, setkeyword] = React.useState("");
     const history = useHistory();
     const [user, setUser] = React.useState({});
@@ -64,19 +62,6 @@ export const VillagesPage = () => {
     };
 
     const columns = [
-        // {
-        //     title: "#",
-        //     dataIndex: "id",
-        //     key: "id",
-        // },
-        // {
-        //     title: "Code du village",
-        //     dataIndex: "longcode",
-        //     key: "longcode",
-        //     render: (name) => {
-        //         return <Tag color={"blue"} style={{}} ><strong style={{ color: Colors.primaryColor }} > {name}</ strong></Tag>
-        //     }
-        // },
         {
             title: "Nom du village",
             dataIndex: "village",
@@ -104,23 +89,6 @@ export const VillagesPage = () => {
             dataIndex: "isvalidated",
             render: (name) => name === 0 ? <strong style={{ color: Colors.dangerColor }}>Non vérifié</strong> : <strong style={{ color: Colors.successColor }}>Vérifié</strong>
         },
-        // {
-        //     title: "Code territoire",
-        //     key: "codeterritoire",
-        //     dataIndex: "codeterritoire",
-        //     render: (name) => {
-        //         return <strong>{name}</strong>
-        //     }
-        // },
-        // {
-        //     title: "Territoire",
-        //     key: "territoire",
-        //     dataIndex: "territoire",
-        //     render: (name) => {
-        //         return <strong>{name}</strong>
-        //     }
-        // },
-
         {
             title: "Territoire",
             key: "territoire_name",
@@ -144,38 +112,7 @@ export const VillagesPage = () => {
             render: (name) => {
                 return <strong>{name}</strong>
             }
-        },
-        // {
-        //     title: "ACTION",
-        //     key: "name",
-        //     fixed: 'right',
-        //     render: (name) => {
-        //         return (
-        //             <Button.Group
-        //                 onChange={(e) => {
-        //                     e.preventDefault();
-        //                 }}
-        //             >
-        //                 <Button
-        //                     onClick={e => {
-        //                         setcurrent(name);
-        //                         setvisibleEdit(true);
-        //                     }}
-        //                 >
-        //                     <FiEdit size={12} color={Colors.primaryColor} />
-        //                 </Button>
-        //                 <Button
-        //                     onClick={(e) => {
-        //                         setcurrent(name)
-        //                         setvisibledisplay(true)
-        //                     }}
-        //                 >
-        //                     <FiEye size={12} color={Colors.dangerColor} />
-        //                 </Button>
-        //             </Button.Group>
-        //         )
-        //     }
-        // },
+        }
     ];
 
     const exportInstance = new tableExport(jobs, columns);

@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { appname } from '../appconstants/app.constants';
 import { Colors } from '../assets/colors/colors';
-import { Card, Col, Radio, Row, Table, Typography } from 'antd';
+import { Card, Col, Form, Input, Radio, Row, Select, Table, Typography } from 'antd';
 import Paragraph from "antd/lib/typography/Paragraph";
 import { LuRefreshCw } from 'react-icons/lu';
-import { now } from '../helpers/helper.all';
+import { now, onFinishFailed } from '../helpers/helper.all';
+import { onLoadAllProvinces, onLoadAllTerritoriesByProvinces, onLoadAllVillages } from '../helpers/helper.call';
+import { handleSearch } from 'dm-handlesearch';
 
 const { Title, Text } = Typography;
 const { Column, ColumnGroup } = Table;
@@ -12,6 +14,15 @@ const { Column, ColumnGroup } = Table;
 export const ActivitiesScreen = () => {
     const [isloading, setisloading] = React.useState(false)
     const [list, setlist] = React.useState([])
+    const [territoires, setterritoires] = React.useState([]);
+    const [provinces, setprovinces] = React.useState([]);
+    const [offset, setoffset] = React.useState(1);
+    const [limit, setlimit] = React.useState(50);
+    const [_size, _setsiize] = React.useState(0);
+    const [jobs, setjobs] = React.useState([]);
+    const [keyword, setkeyword] = React.useState("");
+    const [temps, settemps] = React.useState([]);
+
     const onChange = async () => {
 
     }
@@ -20,7 +31,92 @@ export const ActivitiesScreen = () => {
 
     }
 
-    React.useEffect(() => { }, [])
+    const _____onLoadInfos = async () => {
+        setisloading(true);
+        onLoadAllVillages({
+            options: {},
+            callBack: (err, done) => {
+                setisloading(false)
+                if (done) {
+                    const { size, length, liste } = done;
+                    const d = Array.from(liste).map(l => {
+                        const { __tbl_territory } = l;
+                        const { territoire, __tbl_province } = __tbl_territory
+                        const { province = "---" } = __tbl_province || {}
+                        return {
+                            ...l,
+                            territoire_name: territoire,
+                            province_name: province
+                        }
+                    })
+                    settemps(d);
+                    setjobs(d);
+                    _setsiize(size)
+                } else {
+                    settemps([]);
+                    setjobs([])
+                }
+            }
+        })
+
+        onLoadAllProvinces({
+            options: {},
+            callBack: (err, done) => {
+                setisloading(false)
+                if (done) {
+                    setprovinces(done)
+                } else {
+                    setprovinces([])
+                }
+            }
+        });
+    };
+
+    const __onLoadTerritoires = async ({ index }) => {
+        index = index.substring(0, index.indexOf("|"));
+        onLoadAllTerritoriesByProvinces({
+            options: {}, index: index, callBack: (err, done) => {
+                if (done) {
+                    setisloading(false)
+                    setterritoires(done)
+                } else {
+                    setisloading(false)
+                    setterritoires([])
+                }
+            }
+        });
+    };
+
+    const __onLoadVillages = async ({ index }) => {
+        index = index.substring(0, index.indexOf("|"));
+        handleSearch({
+            columns: ['territoire'],
+            keyword: index,
+            rows: temps,
+            cb: ({ rows, keyword, length }) => {
+                setisloading(false)
+                setjobs(rows)
+            }
+        })
+    };
+
+    const ___handleSearch = ({ keyword }) => {
+        setisloading(true)
+        handleSearch({
+            columns: ['village'],
+            keyword,
+            rows: temps,
+            cb: ({ rows, keyword, length }) => {
+                setisloading(false)
+                setjobs(rows)
+            }
+        })
+    };
+
+    React.useEffect(() => { 
+        _____onLoadInfos()
+    }, []);
+
     return (
         <>
             <Row gutter={[24, 0]}>
@@ -28,13 +124,10 @@ export const ActivitiesScreen = () => {
                     <Card bordered={false} className="criclebox cardbody h-full">
                         <div className="project-ant">
                             <div>
-                                <Title level={5}>Recentes activités ( {list.length} )</Title>
+                                <Title level={5}>Activité de prélevement ( {list.length} )</Title>
                                 <Paragraph className="lastweek">
                                     Liste des activités {appname} | Dernière mis à jour <span className="blue" style={{ color: Colors.primaryColor }}>{now()}</span>
                                 </Paragraph>
-                            </div>
-                            <div className="">
-
                             </div>
                             <div className="ant-filtertabs">
                                 <div className="antd-pro-pages-dashboard-analysis-style-salesExtra">
@@ -52,39 +145,79 @@ export const ActivitiesScreen = () => {
                             </div>
                         </div>
                         <div className="ant-list-box table-responsive">
-                            {/* <table className="width-100">
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Catégorie</th>
-                                    <th>Niveau de risque</th>
-                                    <th>Etat de l'alerte</th>
-                                    <th>Espèce de plante</th>
-                                    <th>Déscription</th>
-                                    <th>Utilisateur</th>
-                                    <th>Labo</th>
-                                    <th>Date d'alerte</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {[...list].map((l, index) => {
-                                    const { user, img, level, espece, state, desc, labo, categ, date } = l
-                                    return (
-                                        <tr key={index}>
-                                            <td>{img}</td>
-                                            <td>{categ}</td>
-                                            <td>{level}</td>
-                                            <td>{state}</td>
-                                            <td>{espece}</td>
-                                            <td>{limitCharacters({ needlength: 20, string: desc })}</td>
-                                            <td>{user}</td>
-                                            <td>{labo}</td>
-                                            <td>{date}</td>
-                                        </tr>
-                                    )
-                                })}
-                            </tbody>
-                        </table> */}
+                            <div className="w-100 px-3">
+                                <Form
+                                    // form={form}
+                                    title={"Filtre"}
+                                    layout='vertical'
+                                    name="basic"
+                                    onFinish={(v) => { }}
+                                    onFinishFailed={onFinishFailed}
+                                    className="row-col col-lg-12 pt-3"
+                                >
+                                    <Row gutter={[24, 0]}>
+                                        <Col span={12} md={8} >
+                                            <Form.Item
+                                                className='w-100'
+                                                name="province"
+                                                label="Province"
+                                                rules={[
+                                                    { required: false, message: "Séléctionner la province" },
+                                                ]}
+                                            >
+                                                <Select showSearch size='large' placeholder="Séléctionner la province" onSelect={e => { __onLoadTerritoires({ index: e }) }} >
+                                                    {provinces.map((v, i) => {
+                                                        return (
+                                                            <Select.Option value={`${v && v['id']}|${v && v['province']}`} >{v && v['province']}</Select.Option>
+                                                        )
+                                                    })}
+                                                </Select>
+                                            </Form.Item>
+                                        </Col>
+                                        <Col span={12} md={8}>
+                                            <Form.Item
+                                                className='w-100'
+                                                name="territoire"
+                                                label="Territoire"
+                                                rules={[
+                                                    { required: false, message: "Séléctionner une territoire" },
+                                                ]}
+                                            >
+                                                <Select showSearch size='large' placeholder="Séléctionner la territoire" onSelect={e => { __onLoadVillages({ index: e }) }} >
+                                                    {territoires.map((v, i) => {
+                                                        return (
+                                                            <Select.Option value={`${v && v['id']}|${v && v['territoire']}`} >{v && v['territoire']}</Select.Option>
+                                                        )
+                                                    })}
+                                                </Select>
+                                            </Form.Item>
+                                        </Col>
+                                        <Col span={12} md={8}>
+                                            <Form.Item
+                                                className='w-100'
+                                                name="village"
+                                                label="Recherche nom du village"
+                                                rules={[
+                                                    { required: false, message: "Rechercehe nom du village" },
+                                                ]}
+                                            >
+                                                <Input
+                                                    style={{
+                                                        width: '100%',
+                                                        float: "right",
+                                                        position: "relative",
+                                                    }}
+                                                    placeholder="mot de recherche ..."
+                                                    onChange={(e) => {
+                                                        setkeyword(e.target.value)
+                                                        ___handleSearch({ keyword: e.target.value })
+                                                    }}
+                                                />
+                                            </Form.Item>
+                                        </Col>
+                                    </Row>
+                                </Form>
+                            </div>
                         </div>
                     </Card>
                 </Col>
