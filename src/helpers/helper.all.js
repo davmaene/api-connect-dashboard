@@ -179,7 +179,7 @@ export const returnCurrentRoles = ({ userProfile }) => {
     })
 
     return output.join(" | ")
-}
+};
 
 export const intersection = ({ array1, array2 }) => {
     const set1 = new Set(array1);

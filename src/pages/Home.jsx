@@ -348,71 +348,12 @@ export const HomeScreen = () => {
         <Row gutter={[24, 0]}>
           <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
-              <Echart data={{ users, stores, projects, labos, visites: visits }} />
+              {/* <Echart data={{ users, stores, projects, labos, visites: visits }} /> */}
             </Card>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
-              <LineChart data={{ visits, users }} />
-            </Card>
-          </Col>
-        </Row>
-
-        <Row gutter={[24, 0]}>
-          <Col xs={24} sm={24} className="mb-24">
-            <Card bordered={false} className="criclebox cardbody h-full">
-              <div className="project-ant">
-                <div>
-                  <Title level={5}>Alertes phytosanitaires</Title>
-                  <Paragraph className="lastweek">
-                    cas d'alertes phytosanitaires mis à jour <span className="blue" style={{ color: Colors.primaryColor }}>{now()}</span>
-                  </Paragraph>
-                </div>
-                <div className="ant-filtertabs">
-                  <div className="antd-pro-pages-dashboard-analysis-style-salesExtra">
-                    <Radio.Group onChange={onChange} defaultValue="a">
-                      <Radio.Button value="a">Toutes</Radio.Button>
-                      {/* <Radio.Button value="b">ONLINE</Radio.Button>
-                      <Radio.Button value="c">STORES</Radio.Button> */}
-                    </Radio.Group>
-                  </div>
-                </div>
-              </div>
-              <div className="ant-list-box table-responsive">
-                <table className="width-100">
-                  <thead>
-                    <tr>
-                      <th>Image</th>
-                      <th>Catégorie</th>
-                      <th>Niveau de risque</th>
-                      <th>Etat de l'alerte</th>
-                      <th>Espèce de plante</th>
-                      <th>Déscription</th>
-                      <th>Utilisateur</th>
-                      <th>Labo</th>
-                      <th>Date d'alerte</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {list.map((l, index) => {
-                      const { user, img, level, espece, state, desc, labo, categ, date } = l
-                      return (
-                        <tr key={index}>
-                          <td>{img}</td>
-                          <td>{categ}</td>
-                          <td>{level}</td>
-                          <td>{state}</td>
-                          <td>{espece}</td>
-                          <td>{limitCharacters({ needlength: 20, string: desc })}</td>
-                          <td>{user}</td>
-                          <td>{labo}</td>
-                          <td>{date}</td>
-                        </tr>
-                      )
-                    })}
-                  </tbody>
-                </table>
-              </div>
+              {/* <LineChart data={{ visits, users }} /> */}
             </Card>
           </Col>
         </Row>

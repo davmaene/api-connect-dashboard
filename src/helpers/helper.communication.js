@@ -40,7 +40,7 @@ axios.interceptors.request.use(
 
         config.headers.apikey = '$2b$10$AS6GbX37SkQS6skhMOYjveDOuUUgvGz9dvsrCbeylWl/SwMkDDp2G';
         config.headers.apikeyaccess = appname + '@api2022';
-        config.headers['x-connexion-mukulima'] = 'Bearer ' + bearer;
+        config.headers['x-connexion-apiconnect'] = 'Bearer ' + bearer;
         return { ...config, signal: controller.signal };
     },
     (rejected) => {
