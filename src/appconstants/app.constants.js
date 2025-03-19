@@ -1,5 +1,5 @@
-export const baseURL = 'http://127.0.0.1:4001';
-// export const baseURL = 'https://apico.mukulima.com'
+// export const baseURL = 'http://127.0.0.1:4001';
+export const baseURL = 'https://apico.mukulima.com'
 export const defaultAvatar = 'assets/as_assets/image-efHEesPlFkfUYruMh1K4wBL3vZ7h1j0b.jpg';
 
 export const timeout = 25000;
