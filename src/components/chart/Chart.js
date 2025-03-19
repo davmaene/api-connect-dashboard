@@ -4,7 +4,7 @@ import { MinusOutlined } from "@ant-design/icons";
 import { formmatDate, groupArrayElementByColumn, now, unixToDate } from "../../helpers/helper.all";
 import { Colors } from "../../assets/colors/colors";
 
-function LineChartFirt({ data }) {
+function LineChart({ data }) {
 
     const dataNordKivu = [
         { date: "2024-02-15", tempMin: 18, tempMax: 25, village: "Kibirizi", humidite: 75 },

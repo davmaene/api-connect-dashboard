@@ -8,6 +8,7 @@ import { now, onFinishFailed } from '../helpers/helper.all';
 import { onLoadAllProvinces, onLoadAllTerritoriesByProvinces, onLoadAllVillages } from '../helpers/helper.call';
 import { handleSearch } from 'dm-handlesearch';
 import LineChart from '../components/chart/LineChart';
+import LineChartFirt from '../components/chart/LineChartmes';
 
 const { Title, Text } = Typography;
 const { Column, ColumnGroup } = Table;
@@ -234,11 +235,11 @@ export const ActivitiesScreen = () => {
                             </div>
                             <div className="w-100 px-3">
                                 <Row gutter={[24, 0]}>
-                                    {/* <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
+                                    <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
                                         <Card bordered={false} className="criclebox h-full">
-                                            <EChart data={{ users, stores, projects, labos, visites: visits }} />
+                                            <LineChartFirt data={{ visits: dataNordKivu, users: [] }} />
                                         </Card>
-                                    </Col> */}
+                                    </Col>
                                     <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
                                         <Card bordered={false} className="criclebox h-full">
                                             <LineChart data={{ visits: dataNordKivu, users: [] }} />
