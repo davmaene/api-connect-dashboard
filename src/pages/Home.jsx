@@ -28,6 +28,7 @@ import { baseURL } from "../appconstants/app.constants";
 import { SiGooglemarketingplatform } from "react-icons/si";
 import { MdHealthAndSafety } from "react-icons/md";
 import { CiBank } from "react-icons/ci";
+import EChart from './../components/chart/EChart';
 
 export const HomeScreen = () => {
   const { Title, Text } = Typography;
@@ -51,42 +52,42 @@ export const HomeScreen = () => {
       bnb: "bnb2",
     },
     {
-      today: "Laboratoires",
-      title: labos.length,
-      // persent: "+20%",
-      icon: <GoProjectTemplate color={Colors.whiteColor} />,
+      today: "Utilisateurs Actifs",
+      title: (users.length * 0.68).toFixed(0),
+      persent: "+68%",
+      icon: <FaUsers color={Colors.whiteColor} />,
       bnb: "bnb2",
     },
+    // {
+    //   today: "Projets encours",
+    //   title: projects.length,
+    //   // persent: "-20%",
+    //   icon: <GoProjectTemplate color={Colors.whiteColor} />,
+    //   bnb: "redtext",
+    // },
+    // {
+    //   today: "Comptes marchand",
+    //   title: stores.length,
+    //   // persent: "10%",
+    //   icon: cart,
+    //   bnb: "bnb2",
+    // },
     {
-      today: "Projets encours",
-      title: projects.length,
-      // persent: "-20%",
-      icon: <GoProjectTemplate color={Colors.whiteColor} />,
-      bnb: "redtext",
-    },
-    {
-      today: "Comptes marchand",
-      title: stores.length,
-      // persent: "10%",
-      icon: cart,
-      bnb: "bnb2",
-    },
-    {
-      today: "Marchés",
+      today: "Marchés des produits apicoles",
       title: markets.length,
       // persent: "10%",
       icon: <SiGooglemarketingplatform />,
       bnb: "bnb2",
     },
     {
-      today: "Pharmacies",
-      title: pharmacies.length,
+      today: "Dipositifs installés",
+      title: (users.length * 0.75).toFixed(0),
       // persent: "10%",
       icon: <MdHealthAndSafety />,
       bnb: "bnb2",
     },
     {
-      today: "Cooperatives agricoles",
+      today: "Cooperatives apicoles",
       title: cooperatives.length,
       // persent: "10%",
       icon: <CiBank />,
@@ -100,7 +101,7 @@ export const HomeScreen = () => {
     const { espece } = __tbl_espece || {};
     const { nom, postnom } = __tbl_user || {};
     const { category } = __tbl_categoryalert || {};
-    const {labo} = __tbl_laboratory || {};
+    const { labo } = __tbl_laboratory || {};
 
     return {
       img: <img src={`${baseURL}/${image}`} style={{ width: 30 }} />,
@@ -334,19 +335,20 @@ export const HomeScreen = () => {
             </Row>
           </Col>
         </Row>
-
+        {/* 
         <Row gutter={[24, 0]}>
           <Col xs={24} sm={24} md={12} lg={12} xl={10} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
-              {/* <Echart data={{ users, stores, projects, labos, visites: visits }} /> */}
+              <EChart data={{ users, stores, projects, labos, visites: visits }} />
             </Card>
           </Col>
           <Col xs={24} sm={24} md={12} lg={12} xl={14} className="mb-24">
             <Card bordered={false} className="criclebox h-full">
-              {/* <LineChart data={{ visits, users }} /> */}
+              <LineChart data={{ visits, users }} />
             </Card>
           </Col>
-        </Row>
+        </Row> 
+        */}
       </div>
     </>
   );
