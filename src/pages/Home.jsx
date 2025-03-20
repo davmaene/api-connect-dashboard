@@ -20,7 +20,6 @@ import { FaUsers } from "react-icons/fa";
 import { Colors } from "../assets/colors/colors";
 import { onLoadAllCooperatives, onLoadAllLabos, onLoadAllMarkets, onLoadAllPharmacies, onLoadAllProject, onLoadAllUsers, onLoadAllUsersAlerts, onLoadAllUsersPerCategory, onLoadAllUsersVsisits } from "../helpers/helper.call";
 import { AreaMapAlert } from "../components/map/MapAlert";
-import { limitCharacters, now } from "../helpers/helper.all";
 import { MdRefresh } from "react-icons/md";
 import { baseURL } from "../appconstants/app.constants";
 import { SiGooglemarketingplatform } from "react-icons/si";
