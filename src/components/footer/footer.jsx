@@ -26,12 +26,12 @@ export const FooterComponent = () => {
                 <Menu.Item>Company</Menu.Item>
                 <Menu.Item>A propos de nous</Menu.Item>
                 <Menu.Item>Teams</Menu.Item>
-                <Menu.Item>Mukulima Investement</Menu.Item>
-                <Menu.Item>Mukulima Soko</Menu.Item>
+                <Menu.Item>Market</Menu.Item>
+                <Menu.Item>Admin</Menu.Item>
             </Menu>
             <p className="copyright text-center">
                 {" "}
-                Copyright © {new Date().getFullYear()} {appname} by <a target={"_blank"} href="https://mukulima.com">{appcompanyname}</a>.{" "}
+                Copyright © {new Date().getFullYear()} {appname} by <a target={"_blank"} href="https://apiconnect.tech">{appcompanyname}</a>.{" "}
             </p>
         </Footer>
     )

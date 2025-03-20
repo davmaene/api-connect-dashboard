@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 import { LoaderComponent } from "../components/loader/loader";
 import { Colors } from "../assets/colors/colors";
 import { Dims } from "../appconstants/app.dimensions";
-import { appcompanyname, appname } from "../appconstants/app.constants";
+import { appname } from "../appconstants/app.constants";
 import { FooterComponent } from "../components/footer/footer";
 import { onFinishFailed } from "../helpers/helper.all";
 import { onRunExternalRQST } from "../helpers/helper.communication";

@@ -14,7 +14,7 @@ function Footer() {
           <div className="copyright">
             © {new Date().getFullYear()}, App Dashboard
             by
-            <a href="https://privancy.mukulima.com" className="font-weight-bold" target="_blank">
+            <a href="https://privancy.apiconnect.tech" className="font-weight-bold" target="_blank">
               {appname}
             </a>
             | {appcompanyname}.
@@ -65,7 +65,7 @@ function Footer() {
               </li>
               <li className="nav-item">
                 <a
-                  href="https://privancy.mukulima.com"
+                  href="https://privancy.apiconnect.tech"
                   className="nav-link pe-0 text-muted"
                   target="_blank"
                 >
