@@ -151,7 +151,7 @@ export const SignInScreen = () => {
 
   const onChange = () => {
 
-  }
+  };
 
   return (
     <>
