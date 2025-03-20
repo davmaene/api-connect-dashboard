@@ -15,10 +15,8 @@ import {
 } from "antd";
 import Paragraph from "antd/lib/typography/Paragraph";
 
-import { GoProjectTemplate } from "react-icons/go";
 import { FaUsers } from "react-icons/fa";
 
-import { cart, profile } from "../components/subcomponents/subcomponents";
 import { Colors } from "../assets/colors/colors";
 import { onLoadAllCooperatives, onLoadAllLabos, onLoadAllMarkets, onLoadAllPharmacies, onLoadAllProject, onLoadAllUsers, onLoadAllUsersAlerts, onLoadAllUsersPerCategory, onLoadAllUsersVsisits } from "../helpers/helper.call";
 import { AreaMapAlert } from "../components/map/MapAlert";
@@ -28,7 +26,6 @@ import { baseURL } from "../appconstants/app.constants";
 import { SiGooglemarketingplatform } from "react-icons/si";
 import { MdHealthAndSafety } from "react-icons/md";
 import { CiBank } from "react-icons/ci";
-import EChart from './../components/chart/EChart';
 
 export const HomeScreen = () => {
   const { Title, Text } = Typography;
