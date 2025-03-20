@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Menu, Button, Modal, Divider } from "antd";
 import { NavLink, useLocation } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
-import toast from 'react-hot-toast';
 import { IoIosCog, IoIosNotifications } from "react-icons/io";
 import { MdList, MdLocalActivity, MdOutlineLocalActivity } from "react-icons/md";
 import { FaChartBar, FaCogs, FaList } from "react-icons/fa";
