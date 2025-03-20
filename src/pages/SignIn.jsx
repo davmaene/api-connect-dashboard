@@ -161,7 +161,7 @@ export const SignInScreen = () => {
             <div className="content">
               <Title>Connexion</Title>
               <p className="text-lg">
-                Entrer vos informations pour pouvour continer avec {appname}, et profiter de toutes les fonctionnalités
+                Entrer vos informations pour pouvour continuer avec {appname}, et profiter de toutes les fonctionnalités du supeur admin
               </p>
             </div>
           </div>
