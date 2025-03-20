@@ -19,9 +19,7 @@ const { Header, Footer, Content } = Layout;
 
 export const FooterComponent = () => {
     return (
-        <Footer
-            style={{ position: "fixed", bottom: 0, background: Colors.pillColor, paddingTop: 10, width: "100%" }}
-        >
+        <Footer style={{ position: "fixed", bottom: 0, background: Colors.pillColor, paddingTop: 10, width: "100%" }}>
             <Menu mode="horizontal" hidden>
                 <Menu.Item>Company</Menu.Item>
                 <Menu.Item>A propos de nous</Menu.Item>
