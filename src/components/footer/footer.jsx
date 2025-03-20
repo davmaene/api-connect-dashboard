@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 import {
     Layout,
     Menu,
-    Button,
-    Row,
-    Col,
     Typography,
-    Form,
-    Input,
-    Switch,
 } from "antd";
 import { appcompanyname, appname } from '../../appconstants/app.constants';
 import { Colors } from '../../assets/colors/colors';
