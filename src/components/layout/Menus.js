@@ -15,7 +15,6 @@ import { routes } from '../../helpers/helper.routes';
 export const DashboardMenus = ({ user, appkey }) => {
 
     const { pathname } = useLocation();
-    const history = useHistory();
     const page = pathname.substring(pathname.lastIndexOf("/") + 1) // || pathname.replace("/", "");
     const SubMenu = Menu.SubMenu;
     const color = Colors.primaryColor;
