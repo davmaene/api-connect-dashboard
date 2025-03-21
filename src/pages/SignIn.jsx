@@ -224,13 +224,12 @@ export const SignInScreen = () => {
                   {isLoading ? <LoaderComponent size={22} primaryColor={Colors.primaryColor} secondaryColor={Colors.secondaryColor} /> : <b style={{ fontSize: Dims.fontSizeBtn }}>Connexion</b>}
                 </Button>
               </Form.Item>
-              <p className="font-semibold text-muted">
+              {/* <p className="font-semibold text-muted">
                 Vous n'avez pas encore un compte ?{" "}
-                {/* mailto:contact@mukulima.com */}
                 <Link to={routes['signup']} className="text-dark font-bold">
                   Enregistrement
                 </Link>
-              </p>
+              </p> */}
             </Form>
           </Card>
         </Content>
