@@ -1907,7 +1907,7 @@ body {
   background-size: cover;
   background-position: 50%;
   text-align: center;
-  background: url("../images/bg.svg") no-repeat center top;
+  background: url("../images/bg-signup.jpg") no-repeat center top;
 }
 
 .header-col.header-brand {
