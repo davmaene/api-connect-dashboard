@@ -291,9 +291,6 @@ function Header({
 
   return (
     <>
-      <div className="setting-drwer" onClick={showDrawer}>
-        {setting}
-      </div>
       <Row gutter={[24, 0]}>
         <Col span={24} md={6}>
           <Breadcrumb>
@@ -314,11 +311,10 @@ function Header({
           </div>
         </Col>
         <Col span={24} md={18} className="header-control">
-
-          <Button type="link" onClick={showDrawer}>
+          {/* <Button type="link" onClick={showDrawer}>
             <IoApps />
-          </Button>
-          <Badge size="small" count={items.length}>
+          </Button> */}
+          {/* <Badge size="small" count={items.length}>
             <Dropdown
               // overlay={menu}
               menu={{ items }}
@@ -368,15 +364,15 @@ function Header({
                 {bell}
               </a>
             </Dropdown>
-          </Badge>
-          <Button
+          </Badge> */}
+          {/* <Button
             type="link"
             className="sidebar-toggler"
             onClick={() => onPress()}
           >
             {toggler}
-          </Button>
-          <Drawer
+          </Button> */}
+          {/* <Drawer
             className="settings-drawer"
             mask={true}
             width={360}
@@ -447,18 +443,13 @@ function Header({
                 </div>
               </div>
             </div>
-          </Drawer>
+          </Drawer> */}
           <Link to={routes['profile']} className="btn-sign-in">
             {profile}
             <strong style={{ textTransform: "capitalize" }}>
               {returnCurrentUserName({ userProfile: user })}
             </strong>
           </Link>
-          {/* <Input
-            className="header-search"
-            placeholder="Type here..."
-            prefix={<SearchOutlined />}
-          /> */}
         </Col>
       </Row>
     </>

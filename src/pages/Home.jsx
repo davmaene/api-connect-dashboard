@@ -264,13 +264,7 @@ export const HomeScreen = () => {
     <>
       <div className="layout-content">
         <Row className="rowgap-vbox" gutter={[24, 24]}>
-          <Col span={24} md={14} style={{ marginBottom: 20 }}>
-            <Card bordered={false} className="criclebox h-full" style={{}}>
-              <AreaMapAlert key={902029} />
-            </Card>
-          </Col>
-
-          <Col span={24} md={10} >
+          <Col span={24} md={24} >
             <Row gutter={[24, 0]}>
               <Col span={24} md={24} style={{ marginBottom: 25 }} >
                 <Card bordered={false} className="criclebox " style={{ background: Colors.primaryColor }}>
@@ -308,10 +302,10 @@ export const HomeScreen = () => {
                 <Col
                   span={24}
                   key={index}
-                  md={12}
+                  md={6}
                   className="mb-24"
                 >
-                  <Card bordered={false} className="criclebox ">
+                  <Card bordered={false} className="criclebox homecard">
                     <div className="number">
                       <Row align="middle" gutter={[24, 24]}>
                         <Col xs={18}>

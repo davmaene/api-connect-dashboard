@@ -12,9 +12,8 @@ import { Dims } from '../../appconstants/app.dimensions';
 import { canThisBeShowForThisUser, features } from '../../helpers/helper.menus';
 import { initialRoles, randomLongNumber } from '../../helpers/helper.all';
 import { IoIosCog, IoIosNotifications } from "react-icons/io";
-import { MdList, MdLocalActivity, MdOutlineLocalActivity } from "react-icons/md";
-import { FaChartBar, FaCogs, FaList } from "react-icons/fa";
 import { BuildMenusApp } from './Menus';
+import logo from '../../assets/images/1.png';
 
 function Sidenav({ color }) {
 
@@ -71,11 +70,8 @@ function Sidenav({ color }) {
 
   return (
     <>
-      <div className="brand">
-        <strong style={{ fontSize: Dims.titleFontSize, color: Colors.primaryColor }}>
-          {appname} |
-          App
-        </strong>
+      <div className="brand" style={{ display: "flex", flexDirection: "row", justifyContent: "start", background: Colors.pillColor, padding: 5, paddingTop: 10, paddingBottom: 10, paddingLeft: 20, borderRadius: 10 }}>
+        <img src={logo} style={{ height: 40 }} />
       </div>
       <Divider />
       <BuildMenusApp appkey={8498} user={user} />

@@ -1898,6 +1898,12 @@ body {
   display: none;
 }
 
+.ant-card.homecard {
+  /* box-shadow: 0px 20px 27px #0000000d; */
+  /* border-radius: 12px; */
+  border-bottom: 5px solid var(--primary-color);
+}
+
 .sign-up-header {
   height: 550px;
   margin-top: -62.8px;
