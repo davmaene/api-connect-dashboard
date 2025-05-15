@@ -165,7 +165,6 @@ export const SignInScreen = () => {
               </p>
             </div>
           </div>
-
           <Card
             className="card-signup header-solid h-full ant-card pt-0"
             bordered="false"
